@@ -1,0 +1,53 @@
+.paginationcontainer {
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    
+  }
+  
+  .paginationbutton {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 43px;
+    height: 43px;
+    margin: 5px;
+    overflow: hidden;
+    background-color: rgba(200, 196, 196, 0.5);
+    transition: transform 0.5s;
+  }
+  
+  .paginationbutton:hover {
+    box-shadow: paleturquoise;
+    transform: scale(1.05) rotate(2deg);
+    background-color: rgb(142, 4, 4);
+  }
+  .paginationbuttonactive {
+    background-color: rgb(121, 11, 11);
+    color: white;
+  }
+  
+  .buttonn {
+    overflow: hidden;
+    background-color: rgba(200, 196, 196, 0.5);
+    transition: transform 0.5s;
+  }
+  
+  .buttonn:hover {
+    box-shadow: paleturquoise;
+    transform: scale(1.05) rotate(2deg);
+    background-color: white;
+  }
+  
+  .butonn {
+    overflow: hidden;
+    background-color: rgba(200, 196, 196, 0.5);
+    transition: transform 0.5s;
+  }
+  
+  .butonn:hover {
+    box-shadow: paleturquoise;
+    transform: scale(1.05) rotate(2deg);
+    background-color: white;
+  }

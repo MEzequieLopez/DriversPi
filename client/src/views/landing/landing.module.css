@@ -1,0 +1,33 @@
+@import url("https://fonts.cdnfonts.com/css/formula-a");
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* maxwidth: 300px; */
+  max-width: 300px;
+}
+
+.imgClass {
+  width: 30%;
+  position: absolute;
+  left: 160px;
+  top: 280px;
+}
+
+.button {
+  position: absolute;
+  left: 210px;
+  top: 600px;
+  font-family: "FORMULA-A", sans-serif;
+  font-size: x-large;
+  overflow: hidden;
+  background-color: rgba(200, 196, 196, 0.5);
+  transition: transform 0.5s;
+}
+
+.button:hover {
+  box-shadow: paleturquoise;
+  transform: scale(1.05) rotate(2deg);
+  background-color: rgba(200, 196, 196, 0.5);
+}

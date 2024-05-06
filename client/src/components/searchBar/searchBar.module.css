@@ -1,0 +1,16 @@
+@import url("https://fonts.cdnfonts.com/css/formula-a");
+
+.filtercontainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  font-family: "FORMULA-A", sans-serif;
+  margin-right: 10px;
+  padding: 5px;
+  gap: 10px;
+}
+
+.searchInput {
+  height: 25px;
+  font-family: "FORMULA-A", sans-serif;
+}

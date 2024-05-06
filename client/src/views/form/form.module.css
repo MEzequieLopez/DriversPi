@@ -1,0 +1,88 @@
+@import url("https://fonts.cdnfonts.com/css/formula-a");
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 40px;
+  width: 800px;
+  height: 500px;
+  margin: auto;
+  position: absolute;
+  top: 15%;
+  right: 20%;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.5s;
+  z-index: 2;
+}
+.container:hover {
+  box-shadow: paleturquoise;
+  transform: scale(1.1);
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+  color: black;
+  font-family: "FORMULA-A", sans-serif;
+  font-size: larger;
+}
+
+.formRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+label {
+  width: 150px;
+  margin-right: 20px;
+}
+
+input {
+  height: 10px;
+  flex: 1; /* Hace que los campos de entrada ocupen el espacio restante en la fila */
+  padding: 5px;
+}
+
+textarea {
+  width: 90%;
+  height: 110px;
+  padding: 5px;
+  resize: vertical; /* O "none" para desactivar la redimensión horizontal */
+}
+
+.column {
+  flex: 1; /* Hace que las columnas se expandan para ocupar el espacio disponible */
+  margin-right: 20px; /* Añade un espacio entre las columnas */
+}
+
+.column {
+  flex: 1; /* Hace que las columnas se expandan para ocupar el espacio disponible */
+  margin-left: 20px; /* Añade un espacio entre las columnas */
+}
+
+.button {
+  font-family: "FORMULA-A", sans-serif;
+  font-size: small;
+  margin-top: 0%;
+}
+
+.teamContainer {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los equipos se envuelvan a la siguiente línea si no hay suficiente espacio */
+  margin-top: 0px; /* Ajusta el margen según sea necesario */
+  gap: 20px;
+}
+
+.teamItem {
+  margin-right: 10px; /* Espacio entre los elementos de los equipos */
+  margin-bottom: 10px; /* Espacio entre las líneas de equipos */
+}

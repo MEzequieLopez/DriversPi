@@ -1,0 +1,26 @@
+@import url("https://fonts.cdnfonts.com/css/formula-a");
+
+.navbar {
+  width: 90%;
+  background-color: rgba(200, 196, 196, 0.5);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  right: 50px;
+  z-index: 1000; /* Asegura que esté encima de otros elementos  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  height: 30px;
+  transition: transform 0.5s;
+  font-family: "FORMULA-A", sans-serif;
+  gap: 20px;
+}
+
+.navbar:hover {
+  box-shadow: paleturquoise;
+  background-color: rgb(142, 4, 4);
+}
