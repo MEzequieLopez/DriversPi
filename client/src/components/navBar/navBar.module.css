@@ -1,26 +1,95 @@
 @import url("https://fonts.cdnfonts.com/css/formula-a");
 
 .navbar {
-  width: 90%;
+ 
+width: 100vw;
+}
+
+.navContent {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  flex-wrap: wrap;
+  column-gap: 7rem;
+  border-radius: 15px;
+  background: #61616100;
+  box-shadow: inset -1px -16px 20px 11px #3937379e, inset 14px 14px 28px #83838300;
+  flex:1 1 auto;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+  
+
+}
+
+
+
+.button {
+  font-family: "FORMULA-A", sans-serif;
+  width: 80px;
+  height: 40px;
+  border: none;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.716));
+  border-radius: 10px;
+  box-shadow: inset 0px 20px 20px 0px #31303075, inset 1px -8px 20px 7px #0a0505c1;
+  transition: all 0.3s ease-in-out;
+  
+}
+
+.button:hover {
+  transform: scale(1.09);
+}
+
+
+
+
+
+
+
+/* Media query para pantallas pequeñas */
+
+/* .navbar {
+  display: flex;
+  position: sticky;
+  z-index: 1000;
   background-color: rgba(200, 196, 196, 0.5);
   color: white;
   text-align: center;
-  padding: 1rem;
-  position: absolute;
+  padding: 7px 0 7px 0 ;
   top: 0;
-  right: 50px;
-  z-index: 1000; /* Asegura que esté encima de otros elementos  */
-  display: flex;
+  right: 0;
+  left: 0;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
   height: 30px;
+  min-width: 100vw;
   transition: transform 0.5s;
   font-family: "FORMULA-A", sans-serif;
+  flex-wrap: wrap;
   gap: 20px;
+  box-sizing:content-box;
 }
 
 .navbar:hover {
   box-shadow: paleturquoise;
   background-color: rgb(142, 4, 4);
 }
+
+  @media(max-width:950px) {
+    .navbar {
+      padding: 20px, 10%;
+      display: flex;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: black;
+      box-sizing: content-box;
+     
+    }
+  } */

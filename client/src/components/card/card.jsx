@@ -5,18 +5,19 @@ const Card = ({ id, name, surname, image, teams }) => {
 
   return (
     <div className={style.container} >
-      <Link to={`/detail/${id}`}>
-        <h2  className={style.name} >
+      <Link to={`/detail/${id}`} className={style.link} >
+        <p  className={style.name} >
           {name} {surname}
-        </h2>
+        </p>
         
       </Link>
 
       <Link to={`/detail/${id}`}>
         <img  src={image} alt="" className={style.image} />
       </Link>
-
-      <h4 className={style.teams} >{teams}</h4>
+     
+      {/* <h4 className={style.teams} >{teams}</h4> */}
+     
     </div>
   );
 };

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Landing = () => {
   useEffect(() => {
-    document.body.style.backgroundImage = `url('https://static1.pocketlintimages.com/wordpress/wp-content/uploads/140576-tv-news-feature-how-to-watch-f1-in-4k-ultra-hd-image1-mlmba7ehtv.jpg')`;
+    document.body.style.backgroundImage = `url('https://images5.alphacoders.com/317/thumb-1920-317664.jpg')`;
     document.body.style.backgroundSize = "cover";
     document.body.style.backgroundRepeat = "no-repeat";
     document.body.style.backgroundAttachment = "fixed";
@@ -20,7 +20,7 @@ const Landing = () => {
   return (
     <div className={style.container}>
       <img
-        src="/src/assets/pictures/formula.png"
+        src="https://clipground.com/images/logo-f1-png-8.png"
         alt=""
         className={style.imgClass}
       />

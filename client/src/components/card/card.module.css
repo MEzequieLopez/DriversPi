@@ -1,57 +1,40 @@
 @import url("https://fonts.cdnfonts.com/css/formula-a");
 
+
 .container {
   display: flex;
+  background-color:none;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   position: relative;
-  top: 15px;
-  color: white;
-  background-color: black;
-  padding: 8px;
-  margin: 8px;
-  border-radius: 20px;
-  font-family: "FORMULA-A", sans-serif;
   width: 200px;
-  height: 310px;
-  overflow: hidden;
-  background-color: rgba(200, 196, 196, 0.5);
-  transition: transform 0.5s;
+  height: 300px;
+  border-radius: 35px;
+  box-shadow: inset -7px -10px 20px 4px #000000;
+  margin: 10px;
+  padding: 10px;
+  transition: all 0.3s ease-in-out
 }
 
 .container:hover {
-  box-shadow: paleturquoise;
-  transform: scale(1.05) rotate(2deg);
-  background-color: rgb(142, 4, 4);
+  transform: scale(1.09);
+  box-shadow:inset -7px -10px 20px 4px #000000, 0px 0px 25px rgba(152, 27, 27, 0.861);
 }
 
 .image {
   width: 150px;
-  height: 170px;
-  overflow: hidden;
+  height: 200px;
+  border-radius: 30px;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
 }
-
-.image img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
+.link {
+  text-decoration: none;
 }
-
 .name {
-  color: black;
-  font-size: 14px;
-}
-
-.teams{
-  color: black;
-  font-size: 14px;
-}
-
-.container:hover .name {
-  color: white;
-}
-
-.container:hover .teams {
-  color: white;
+  color:aliceblue;
+  font-size: 20px;
+   padding:10px;
+  
+  font-family: "FORMULA-A", sans-serif;
 }

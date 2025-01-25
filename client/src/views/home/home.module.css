@@ -1,14 +1,27 @@
 @import url("https://fonts.cdnfonts.com/css/formula-a");
 
 .container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan a la siguiente fila si no hay espacio suficiente */
-  justify-content: center; /* Distribuye el espacio alrededor de las tarjetas */
-  margin: 20px;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  min-width: 250px;
 }
 
+.contentWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
 
+.pageContent {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
 
 .button {
   height: 45px;
@@ -22,26 +35,24 @@
   transition: transform 0.5s;
 }
 
-.button:hover {
+.button :hover {
   box-shadow: paleturquoise;
   transform: scale(1.05) rotate(2deg);
   background-color: rgba(200, 196, 196, 0.5);
 }
 
-.buton {
-  height: 45px;
-  font-family: "FORMULA-A", sans-serif;
-  width: 100px;
-  margin-top: 80px;
-  left: 80px;
-  position: absolute;
-  overflow: hidden;
-  background-color: rgba(200, 196, 196, 0.5);
+.backButton {
+  border: none; /* Borde inicial */
+  padding: 5px 10px;
   transition: transform 0.5s;
+  font-family: "FORMULA-A", sans-serif;
+  border-radius: 10px;
+  box-shadow: inset 0px 20px 20px 0px #6c686885, inset 0px -8px 20px 1px #090404;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.63));
 }
 
-.buton:hover {
+.backButton:hover {
   box-shadow: paleturquoise;
-  transform: scale(1.05) rotate(2deg);
+  transform: scale(1.06);
   background-color: rgba(200, 196, 196, 0.5);
 }

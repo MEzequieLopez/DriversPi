@@ -1,53 +1,40 @@
 .paginationcontainer {
-    display: flex ;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    
-  }
-  
-  .paginationbutton {
-    cursor: pointer;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 43px;
-    height: 43px;
-    margin: 5px;
-    overflow: hidden;
-    background-color: rgba(200, 196, 196, 0.5);
-    transition: transform 0.5s;
-  }
-  
-  .paginationbutton:hover {
-    box-shadow: paleturquoise;
-    transform: scale(1.05) rotate(2deg);
-    background-color: rgb(142, 4, 4);
-  }
-  .paginationbuttonactive {
-    background-color: rgb(121, 11, 11);
-    color: white;
-  }
-  
-  .buttonn {
-    overflow: hidden;
-    background-color: rgba(200, 196, 196, 0.5);
-    transition: transform 0.5s;
-  }
-  
-  .buttonn:hover {
-    box-shadow: paleturquoise;
-    transform: scale(1.05) rotate(2deg);
-    background-color: white;
-  }
-  
-  .butonn {
-    overflow: hidden;
-    background-color: rgba(200, 196, 196, 0.5);
-    transition: transform 0.5s;
-  }
-  
-  .butonn:hover {
-    box-shadow: paleturquoise;
-    transform: scale(1.05) rotate(2deg);
-    background-color: white;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 15px;
+  background: #61616100;
+  box-shadow: 0px 0px 12px 2px #000000e0, inset -1px -20px 20px 11px #39373780;
+}
+
+.paginationbutton,
+.buttonn,
+.butonn {
+  cursor: pointer;
+  border: none;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  overflow: hidden;
+  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.7));
+  border-radius: 10px;
+  box-shadow: inset 0px 20px 20px 0px #4b474785, inset 0px -12px 20px 5px #090404c9;
+  transition: all 0.3s ease-in-out;
+  font-weight: bold;
+}
+
+.paginationbutton:hover,
+.buttonn:hover,
+.butonn:hover {
+  transform: scale(1.17);
+ 
+ 
+}
+
+.paginationbuttonactive {
+  background-color: rgb(121, 11, 11);
+  color: white;
+}
+
+

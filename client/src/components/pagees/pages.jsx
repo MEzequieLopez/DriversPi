@@ -5,6 +5,7 @@ const Pages = ({
   currentPage,
   setCurrentPage,
   driversPerPage,
+  handlePageChange
 }) => {
   const pageNumbers = [];
 
@@ -13,21 +14,22 @@ const Pages = ({
   }
 
   const onPreviousPage = () => {
-    setCurrentPage(currentPage - 1);
+    handlePageChange(currentPage - 1);
   };
 
   const onNextPage = () => {
-    setCurrentPage(currentPage + 1);
+    handlePageChange(currentPage + 1);
   };
 
   const onSpecificPage = (n) => {
-    setCurrentPage(n);
+    handlePageChange(n);
   };
 
-  const maxDisplayedPages = 5; // cantidad de páginas que deseas mostrar
+  const maxDisplayedPages = 5;
   const halfMaxDisplayedPages = Math.floor(maxDisplayedPages / 2);
 
   let startPage = Math.max(1, currentPage - halfMaxDisplayedPages);
+  
   let endPage = Math.min(
     Math.ceil(totalDrivers / driversPerPage),
     startPage + maxDisplayedPages - 1
@@ -36,11 +38,15 @@ const Pages = ({
   if (endPage - startPage < maxDisplayedPages - 1) {
     startPage = Math.max(1, endPage - maxDisplayedPages + 1);
   }
+  if(currentPage > 1 && totalDrivers <= 9) {
+    handlePageChange(1)
+  }
 
   const visiblePageNumbers = pageNumbers.slice(startPage - 1, endPage);
-
+console.log(visiblePageNumbers);
   return (
     <div className={style.paginationcontainer}>
+      
       <button
         onClick={onPreviousPage}
         disabled={currentPage === 1}
@@ -73,3 +79,31 @@ const Pages = ({
 };
 
 export default Pages;
+
+{/* <button
+        onClick={onPreviousPage}
+        disabled={currentPage === 1}
+        className={style.buttonn}
+      >
+        Previous
+      </button>
+
+      {visiblePageNumbers.map((noPage) => (
+        <button
+          key={noPage}
+          onClick={() => onSpecificPage(noPage)}
+          className={`${style.paginationbutton} ${
+            noPage === currentPage ? style.paginationbuttonactive : ""
+          }`}
+        >
+          {noPage}
+        </button>
+      ))}
+
+      <button
+        onClick={onNextPage}
+        disabled={currentPage === Math.ceil(totalDrivers / driversPerPage)}
+        className={style.butonn}
+      >
+        Next
+      </button> */}

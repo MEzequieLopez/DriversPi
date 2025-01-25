@@ -30,13 +30,13 @@ const postDriver = async (req, res) => {
       if (teams) {
         const teamNames = teams.split(", ");
 
-        console.log(teamNames)
+        
   
         const searchTeam = await Teams.findAll({
           where: { name: { [Op.in]: teamNames } },
         });
 
-        console.log(searchTeam)
+       
          await newDriver.addTeams(searchTeam);
         
         return res.status(200).json(newDriver);

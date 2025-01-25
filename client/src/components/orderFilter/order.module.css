@@ -2,14 +2,37 @@
 
 .filtercontainer {
   display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
+ 
+  
 }
 
 .orderselect,
 .teamselect,
 .driverselect {
-  margin-right: 10px;
   padding: 5px;
   font-family: "FORMULA-A", sans-serif;
+  flex: 1 1 auto;
+  transition: all 0.3s ease-in-out;
 }
+
+select {
+  border: none; /* Borde inicial */
+  padding: 5px 10px;
+  transition: border-color 0.3s ease; /* Suaviza el cambio de borde */
+  border-radius: 10px;
+  box-shadow: inset 0px 20px 20px 0px #6c686885, inset 0px -8px 20px 1px #090404;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.63));
+
+}
+
+select:focus {
+
+  outline: none; /* Elimina el contorno predeterminado */
+}
+
+select:hover {
+  transform: scale(1.06);
+}
+

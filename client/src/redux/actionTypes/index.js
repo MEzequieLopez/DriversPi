@@ -9,3 +9,4 @@ export const ORDER_DRIVERS = "ORDER_DRIVERS";
 export const ORDER_DRIVERS_DOB = "ORDER_DRIVERS_DOB";
 export const RESET_ORDER = "RESET_ORDER";
 export const GO_BACK = "GO_BACK";
+export const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";

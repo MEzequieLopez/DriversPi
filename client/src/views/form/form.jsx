@@ -16,8 +16,6 @@ const Form = () => {
     dispatch(getAllTeams());
   }, []);
 
-
-
   const [driverData, setDriverData] = useState({
     forename: "",
     surname: "",
@@ -45,19 +43,18 @@ const Form = () => {
       if (value === "Escuderías") {
         return;
       }
-
-      if (!driverData.teams.includes(value)) {
-        setDriverData((prevState) => ({
-          ...prevState,
-          teams: [...prevState.teams, value],
-        }));
-        setErrors(
-          validation({
-            ...driverData,
-            teams: [...driverData.teams, value],
-          })
-        );
-      }
+    
+    if (!driverData.teams.includes(value)) {
+      setDriverData((prevState) => ({
+        ...prevState,
+        teams: [...prevState.teams, value],
+      }));
+      setErrors(
+        validation({
+          ...driverData,
+          teams: [...driverData.teams, value],
+        })
+      );
     } else {
       setDriverData({
         ...driverData,
@@ -69,10 +66,11 @@ const Form = () => {
           ...driverData,
           [name]: value,
         })
-        
       );
-    }
+    }}
   };
+
+  console.log(driverData);
 
   const handleRemove = (team) => (e) => {
     e.preventDefault();
@@ -80,6 +78,7 @@ const Form = () => {
       ...prevState,
       teams: prevState.teams.filter((escuderia) => escuderia !== team),
     }));
+
     setErrors(
       validation({
         ...driverData,
@@ -90,6 +89,7 @@ const Form = () => {
 
   const handleDisable = () => {
     let hasErrors = false;
+    let hasEmptyFields = false;
 
     for (let err in errors) {
       if (errors[err] !== "") {
@@ -97,20 +97,28 @@ const Form = () => {
         break;
       }
     }
+    for (let data in driverData) {
+      if (driverData[data] === "") {
+        hasEmptyFields = true;
+        break;
+      }
+    }
 
-    return hasErrors;
+    return hasErrors || hasEmptyFields;
   };
 
   const handleSubmit = async () => {
-   
-    const teamsAsString = driverData.teams.join(", ");
-    const formWithTeamsAsString = {
-      ...driverData,
-      teams: teamsAsString,
-    };
-    dispatch(await postDriver(formWithTeamsAsString));
-    alert('Driver created successfully')
-   
+    try {
+      const teamsAsString = driverData.teams.join(", ");
+      const formWithTeamsAsString = {
+        ...driverData,
+        teams: teamsAsString,
+      };
+      dispatch(await postDriver(formWithTeamsAsString));
+      alert("Driver created successfully");
+    } catch (error) {
+      alert(`Error creating driver: ${error.message}`);
+    }
   };
 
   return (
@@ -146,7 +154,7 @@ const Form = () => {
             <div className={style.column}></div>
             <label>DATE OF BIRTH</label>
             <input onChange={handleChange} name="dob" type="date" />
-            {errors.birthday ? <label>{errors.birthday}</label> : null}
+            {errors.dob ? <label>{errors.dob}</label> : null}
           </div>
 
           <div className={style.column}>
@@ -161,7 +169,7 @@ const Form = () => {
                   </option>
                 ))}
             </select>
-            <div></div>
+
             <div className={style.teamContainer}>
               {driverData.teams.map((team, index) => (
                 <div key={index}>
@@ -180,10 +188,11 @@ const Form = () => {
           <label>DESCRIPTION</label>
           <textarea onChange={handleChange} name="description" type="text" />
           {errors.description ? <label>{errors.description}</label> : null}
-          <div></div>
         </div>
 
-        <button type="submit" disabled= {handleDisable()}>CREATE</button>
+        <button type="submit" disabled={handleDisable()}>
+          CREATE
+        </button>
       </form>
     </div>
   );

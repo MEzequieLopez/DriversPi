@@ -1,50 +1,66 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllDrivers, getAllTeams, goback } from "../../redux/actions";
+import { getAllDrivers, getAllTeams, goback, setCurrentPage } from "../../redux/actions";
 import Pages from "../../components/pagees/pages";
-import Cards from "../../components/cards/cards";
 import style from "./home.module.css";
+import Card from "../../components/card/card";
 
 const Home = () => {
-  const [driversPerPage, setDriversPerPage] = useState(9);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [currentOrder, setCurrentOrder] = useState("A");
-
   const dispatch = useDispatch();
+  
+  const driversPerPage = 14;
+  
   const allDrivers = useSelector((state) => state.allDrivers);
   const allTeams = useSelector((state) => state.allTeams);
-  
+  const currentPage = useSelector((state) => state.currentPage);
+
   const lastIndex = currentPage * driversPerPage;
   const firstIndex = lastIndex - driversPerPage;
-  
+
   const totalDrivers = allDrivers.length;
-  
+
   useEffect(() => {
     if (!allDrivers.length) dispatch(getAllDrivers());
     if (!allTeams.length) dispatch(getAllTeams());
-  }, [allDrivers]);
+  }, []);
+
+  const handlePageChange = (page) => {
+    dispatch(setCurrentPage(page)); // Cambiar de página.
+  };
 
   const handleBack = () => {
+    console.log("esta funciona?");
+    
     dispatch(goback());
   };
-  // className={style.button}
+  
   return (
     <div className={style.container}>
-      <button onClick={handleBack} className={style.button}>
-        ALL DRIVERS
-      </button>
-      <Cards allDrivers={allDrivers}
-      firstInde={firstIndex}
-      lastIndex={lastIndex}
-   
-      />
-
-      <Pages
-        driversPerPage={driversPerPage}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        totalDrivers={totalDrivers}
-      />
+      <button className={style.backButton } onClick={handleBack} > Back </button>
+      <div className={style.contentWrapper}>
+        {allDrivers
+          .slice(firstIndex, lastIndex)
+          .map(({ id, forename, surname, image, teams }) => (
+            <Card
+              key={id}
+              id={id}
+              name={forename}
+              surname={surname}
+              image={image}
+              teams={teams}
+              className={style.card}
+            />
+          ))}
+      </div>
+      <div className={style.pageContent}>
+        <Pages
+          driversPerPage={driversPerPage}
+          currentPage={currentPage}
+          handlePageChange={handlePageChange}
+          totalDrivers={totalDrivers}
+        />
+      </div>
+      <footer> {"este es el footer"} </footer>
     </div>
   );
 };

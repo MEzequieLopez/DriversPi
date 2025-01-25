@@ -3,14 +3,45 @@
 .filtercontainer {
   display: flex;
   align-items: center;
-  margin-bottom: 5px;
-  font-family: "FORMULA-A", sans-serif;
-  margin-right: 10px;
-  padding: 5px;
-  gap: 10px;
+  gap: 5px;
+  flex-wrap: wrap;
 }
 
 .searchInput {
   height: 25px;
-  font-family: "FORMULA-A", sans-serif;
+ 
+   width: 300px;
+   border-radius: 10px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  
 }
+.searchbutton {
+  border: none;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+  height: 26px;
+  width: 60px; 
+  border: #616161;
+  border-radius: 10px;
+  box-shadow: inset 0px 20px 20px 0px #6c686885, inset 0px -8px 20px 1px #090404;
+  transition: all 0.3s ease-in-out;
+  
+}
+ .searchInput, .searchbutton {
+  font-family:"FORMULA-A", sans-serif;
+  flex: 1 1 auto;
+  
+}
+
+.searchbutton:hover {
+  transform: scale(1.09);
+
+}
+
+input[type="search"]:focus {
+  border: 2px solid #872a2a;
+  outline: none; /* Elimina el contorno predeterminado */
+}
+
+
+
